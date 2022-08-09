@@ -31,6 +31,7 @@ int loop_format(va_list arg, const char *string)
 	flag = 0;
 	int i = 0;
 	cnt = 0;
+	
 	cnt_fm = 0;
 	check_per = 0;
 
@@ -68,6 +69,7 @@ int loop_format(va_list arg, const char *string)
 		}
 		check_per = check_percent(&flag, aux);
 		cnt += check_per;
+		
 		if (check_per == 0 && aux != '\0' && aux != '%')
 			cnt += _putchar(aux), i++;
 		check_per = 0;
