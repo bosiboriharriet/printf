@@ -30,7 +30,6 @@ int loop_format(va_list arg, const char *string)
 {
 	flag = 0;
 	int i = 0;
-	
 	cnt = 0;
 	cnt_fm = 0;
 	chk_per = 0;
