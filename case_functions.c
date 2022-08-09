@@ -33,7 +33,7 @@ int print_sign(va_list arg, int base)
 		_putchar('-');
 		cont += 1;
 	}
-	s = convert_to("0123456789ABCDEF", i, base);
+	s = convert("0123456789ABCDEF", i, base);
 	_puts(s);
 	cont += _strlen(s);
 	return (cont);
@@ -52,7 +52,7 @@ int print_unsign(va_list arg, int base)
 	char *s;
 
 	i = va_arg(arg, unsigned int);
-	s = convert_to("0123456789ABCDEF", i, base);
+	s = convert("0123456789ABCDEF", i, base);
 	_puts(s);
 	cont = _strlen(s);
 
@@ -96,7 +96,7 @@ int print_base16_upper_lower(va_list arg, char *representation)
 	char *s;
 
 	i = va_arg(arg, unsigned int);
-	s = convert_to(representation, i, 16);
+	s = convert(representation, i, 16);
 	_puts(s);
 	cont = _strlen(s);
 	return (cont);
