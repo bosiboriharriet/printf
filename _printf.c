@@ -30,10 +30,10 @@ int loop_format(va_list arg, const char *string)
 {
 	flag = 0;
 	int i = 0;
-	cnt = 0;
 	
+	cnt = 0;
 	cnt_fm = 0;
-	check_per = 0;
+	chk_per = 0;
 
 	while (i < _strlen((char *)string) && *string != '\0')
 	{
@@ -67,22 +67,21 @@ int loop_format(va_list arg, const char *string)
 				}
 			}
 		}
-		check_per = check_percent(&flag, aux);
-		cnt += check_per;
-		
-		if (check_per == 0 && aux != '\0' && aux != '%')
+		chk_per = chk_prcnt(&flag, aux);
+		cnt += chk_per;
+		if (chk_per == 0 && aux != '\0' && aux != '%')
 			cnt += _putchar(aux), i++;
-		check_per = 0;
+		chk_per = 0;
 	}
 	return (cnt);
 }
 /**
- * check_percent - function that will print the % pear
+ * chk_percent - function that will print the % pear
  *@flag: value by reference
  *@aux: character
  *Return: 1 if % is printed
  */
-int check_percent(int *flag, char aux)
+int chk_percent(int *flag, char aux)
 {
 	int cnt = 0;
 	int tmp_flag;
